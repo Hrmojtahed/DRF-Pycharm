@@ -1,11 +1,10 @@
+from django.urls import path
 
-from django.contrib import admin
-from django.urls import path,include
-
-from api.views import ArticleApiView
+from api.views import ArticleApiView, ArticleDetailApiView, ArticleUpdateApiView
 
 urlpatterns = [
-    path('',ArticleApiView.as_view() ),
-
+    path('', ArticleApiView.as_view()),
+    path('<int:pk>', ArticleDetailApiView.as_view()),
+    path('update/<int:pk>', ArticleUpdateApiView.as_view()),
 
 ]
