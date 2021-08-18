@@ -29,7 +29,7 @@ class UserApiView(ListAPIView):
     serializer_class = UserSerializer
     permission_classes = (IsSuperUserOrReadOnly,)
 
-
+# user detail
 class UserDetailApiView(RetrieveUpdateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
