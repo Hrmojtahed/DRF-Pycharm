@@ -1,11 +1,11 @@
-from django.urls import path, include
+from django.urls import path
 
 from api.views import ArticleApiView, ArticleDetailApiView, ArticleUpdateApiView, UserApiView, UserDetailApiView
 
 urlpatterns = [
-    path(
-        "api-auth/", include("rest_framework.urls")
-    ),
+    # path(
+    #     "api-auth/", include("rest_framework.urls")
+    # ),
     path('', ArticleApiView.as_view()),
     path('<int:pk>', ArticleDetailApiView.as_view()),
     path('update/<int:pk>', ArticleUpdateApiView.as_view()),
