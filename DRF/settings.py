@@ -25,10 +25,8 @@ SECRET_KEY = 'django-insecure-wx7cqi1^not3dp7=jf8)=kmps^6du!%5-%#2-+m)@a6cf1@@$^
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
-# Application definition
-
 INSTALLED_APPS = [
+    'django.contrib.sites',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -37,9 +35,18 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
+    'dj_rest_auth',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'dj_rest_auth.registration',
+
     'blog.apps.BlogConfig',
     'api.apps.ApiConfig',
 ]
+
+# Application definition
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -134,3 +141,5 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
     ]
 }
+SITE_ID = 1
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

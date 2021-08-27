@@ -26,4 +26,7 @@ urlpatterns = [
     path('api/token-auth', obtain_auth_token),
     path('api/revoke', RevokeToken.as_view()),
 
+    path('api/rest-auth/', include('dj_rest_auth.urls')),
+    path('api/rest-auth/registration/', include('dj_rest_auth.registration.urls'))
+
 ]
